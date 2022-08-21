@@ -1,10 +1,11 @@
 import { ToolIcon, ToolName, ToolsContainer } from './style';
 
-export default function Box() {
+export default function Box({ appId, name, color, icon, link }) {
+    console.log({ appId, name, color, icon, link });
     return (
-        <ToolsContainer>
-            <ToolIcon src='https://assets.pluga.co/apps/icons/mandrill/mandrill-icon.svg' />
-            <ToolName>Mandrill</ToolName>
+        <ToolsContainer color={ color }>
+            <ToolIcon src={ icon } />
+            <ToolName>{ name }</ToolName>
         </ToolsContainer>
     );
 }

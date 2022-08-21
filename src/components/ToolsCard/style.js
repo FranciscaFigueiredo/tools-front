@@ -13,6 +13,7 @@ const ToolsContainer = styled.div`
     width: 45vw;
     height: 45vw;
 
+    color: ${(props) => (props.color ? props.color : '#ffffff')};
     text-align: center;
 
     display: flex;
@@ -22,22 +23,17 @@ const ToolsContainer = styled.div`
 
     margin: 20px;
 
-    background-color: #c9e1ff;
-    border-radius: 6px;
-    border: 2px solid #a8b8c0;
+    background-color: ${(props) => (props.color ? props.color : '#c9e1ff')};
+    border-radius: 10px;
+
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.15);
 
     position: relative;
 
     cursor: pointer;
 
-    &:hover {
-        width: 50vw;
-        height: 50vw;
-        transition-property: width height left top;
-        transition-duration: 0.4s;
-        transition-timing-function: ease-in-out;
-
-        border: 2px solid #0ea7ff;
+    h3 {
+        filter: invert(80%)
     }
 
     @media (min-width: 600px) {
@@ -48,11 +44,6 @@ const ToolsContainer = styled.div`
     @media (min-width: 1000px) {
         width: 15vw;
         height: 15vw;
-
-        &:hover {
-            width: 20vw;
-            height: 20vw;
-        }
     }
 `;
 
@@ -66,6 +57,7 @@ const ToolIcon = styled.img`
 
     @media (min-width: 600px) {
         width: 15vw;
+        height: 15vw;
     }
 
     @media (min-width: 1000px) {
@@ -75,16 +67,28 @@ const ToolIcon = styled.img`
 `;
 
 const ToolName = styled.h3`
-    font-size: 1.5rem;
+    max-width: 40vw;
 
-    /* @media (min-width: 600px) {
-        width: 50vw;
+    font-size: 1rem;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    margin: 5px 0;
+
+    @media (min-width: 670px) {
+        max-width: 15vw;
+
+        font-size: 1rem;
     }
 
     @media (min-width: 1000px) {
-        width: 10vw;
-        height: 10vw;
-    } */
+        max-width: 13vw;
+        
+        font-size: 1.5rem;
+    }
 `;
 
 export {
