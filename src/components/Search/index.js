@@ -1,4 +1,4 @@
-import { SearchContainer, SearchIcon, SearchInput } from "./style";
+import { SearchContainer, SearchIcon, SearchInput } from './style';
 
 export default function Search() {
     return (

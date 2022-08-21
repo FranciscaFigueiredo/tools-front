@@ -10,9 +10,9 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-		background-color: #fafafa;
+		background-color: #f0f8ff;
 		font-family: 'Montserrat', sans-serif;
-    	color: rgba(0, 0, 0, 0.8);
+    	color: #191970;
 	}
 `;
 
