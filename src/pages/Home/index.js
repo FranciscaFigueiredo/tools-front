@@ -1,14 +1,16 @@
 import { useContext, useEffect } from 'react';
 import { useState } from 'react';
+
+import ToolContext from '../../contexts/ToolContext';
+
 import Details from '../../components/Details';
 import Header from '../../components/Header';
-import ModalBlur from '../../components/ModalBlurBackground';
 import ToolsCard from '../../components/ToolsCard';
-import ToolContext from '../../contexts/ToolContext';
+
 import { ContentContainer, PageContainer } from '../../styles/ContainerStyle';
 
 export default function Home() {
-    const [search, setSearch] = useState(null);
+    const [search, setSearch] = useState('');
 
     const { toolInfo } = useContext(ToolContext);
 

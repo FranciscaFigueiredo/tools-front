@@ -5,13 +5,11 @@ import GlobalStyle from './styles/GlobalStyle';
 
 export default function App() {
     return (
-        <ToolProvider>
-            <BrowserRouter>
-                <GlobalStyle />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                </Routes>
-            </BrowserRouter>
-        </ToolProvider>
+        <BrowserRouter>
+            <GlobalStyle />
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+        </BrowserRouter>
     );
 }

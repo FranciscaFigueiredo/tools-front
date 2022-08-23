@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const DetailContent = styled.div`
-    width: 50vw;
-    min-height: 20vh;
+    max-width: 85vw;
+    min-height: 50vh;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -17,10 +18,22 @@ const DetailContent = styled.div`
     box-sizing: content-box;
 
     position: fixed;
-    top: 30vh;
-    left: 25vw;
+    top: calc(50vh - 50%);
+    left: 3vw;
 
     z-index: 100000;
+
+    @media (min-width: 600px) {
+        width: 80vw;
+        min-height: 30vh;
+
+        top: calc(30vh - 10%);
+        left: 8vw;
+    }
+
+    @media (min-width: 1000px) {
+        width: 50vw;
+    }
 `;
 
 const ToolContent = styled.div`
@@ -34,20 +47,28 @@ const ToolContent = styled.div`
 
 const ToolDetail = styled.div`
     width: 50%;
-    min-height: 20vh;
+    max-height: 45vw;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    @media (min-width: 600px) {
+        height: 20vw;
+    }
+
+    @media (min-width: 1000px) {
+        height: 15vw;
+    }
 `;
 
 const ToolAccessButton = styled.button`
-    width: 10vw;
-    min-height: 3vw;
+    width: 20vw;
+    min-height: 10vw;
 
     color: #f0f8ff;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
 
     background-color: #4baae1;
@@ -56,6 +77,20 @@ const ToolAccessButton = styled.button`
     margin: 10px;
 
     cursor: pointer;
+
+    &:disabled {
+        background-color: gray;
+    }
+
+    @media (min-width: 600px) {
+        width: 15vw;
+        min-height: 5vw;
+    }
+
+    @media (min-width: 1000px) {
+        width: 10vw;
+        min-height: 3vw;
+    }
 `;
 
 const LastViewedToolsContent = styled.div`
