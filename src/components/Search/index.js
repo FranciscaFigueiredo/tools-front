@@ -1,6 +1,6 @@
-import { SearchContainer, SearchIcon, SearchInput } from "./style";
+import { SearchContainer, SearchIcon, SearchInput } from './style';
 
-export default function Search() {
+export default function Search({ search, setSearch }) {
     return (
         <SearchContainer>
             <SearchIcon />
@@ -8,8 +8,8 @@ export default function Search() {
                 type="text"
                 placeholder="Buscar ferramenta"
                 required
-                // value=
-                // onChange={(event) => setSearch(event.target.value)}
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
             />
         </SearchContainer>
     );

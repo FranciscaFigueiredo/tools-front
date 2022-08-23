@@ -1,8 +1,8 @@
-import { GrSearch } from "react-icons/gr";
-import styled from "styled-components";
+import { GrSearch } from 'react-icons/gr';
+import styled from 'styled-components';
 
 const SearchContainer = styled.div`
-    width: 20vw;
+    width: 70vw;
     height: 50px;
 
     text-align: center;
@@ -19,17 +19,31 @@ const SearchContainer = styled.div`
     &:hover {
         border: 2px solid #0ea7ff;
     }
+
+    @media (min-width: 600px) {
+        width: 50vw;
+    }
+
+    @media (min-width: 1000px) {
+        width: 20vw;
+    }
 `;
 
 const SearchInput = styled.input`
-    width: 20vw;
+    width: 90vw;
     height: 50px;
 
     color: #3b4b56;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 300;
 
-    padding: 0 0.8rem 0 3rem;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    padding: 0 0.8rem 0 4rem;
 
     background-color: transparent;
     border-radius: 6px;
@@ -40,6 +54,16 @@ const SearchInput = styled.input`
 
     &::placeholder {
         color: #3b4b56;
+    }
+
+    @media (min-width: 600px) {
+        width: 50vw;
+    }
+
+    @media (min-width: 1000px) {
+        width: 20vw;
+
+        padding: 0 0.8rem 0 3rem;
     }
 `;
 

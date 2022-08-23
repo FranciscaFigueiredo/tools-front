@@ -1,14 +1,16 @@
 import Search from '../Search';
-import { HeaderContainer, Logo, LogoIcon, Title } from './style';
+import { HeaderContainer, HeaderContent, Logo, LogoIcon, Title } from './style';
 
-export default function Header() {
+export default function Header({ search, setSearch }) {
     return (
         <HeaderContainer>
-            <Search />
-            <Logo>
-                <LogoIcon />
-                <Title>Tools</Title>
-            </Logo>
+            <HeaderContent>
+                <Logo>
+                    <LogoIcon />
+                    <Title>Tools</Title>
+                </Logo>
+                <Search search={ search } setSearch={ setSearch } />
+            </HeaderContent>
         </HeaderContainer>
     );
 }
