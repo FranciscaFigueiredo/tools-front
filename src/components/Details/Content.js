@@ -5,7 +5,7 @@ import { DetailContent, ToolAccessButton, ToolDetail, ToolContent } from './styl
 export default function Content({ name, color, icon, link }) {
     return (
         <DetailContent>
-            <ToolContent>
+            <ToolContent type='modal'>
                 <ToolsContainer radius='50%' width='15vw' color={ color }>
                     <ToolIcon width='10vw' src={ icon } />
                 </ToolsContainer>

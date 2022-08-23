@@ -1,12 +1,20 @@
 import styled from 'styled-components';
+import { BsFillArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs'
+import ReactPaginate from 'react-paginate';
 
 const ToolsContent = styled.div`
     width: 90vw;
 
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
+    display: grid;
+    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: center;
+    justify-items: center;
+    grid-template-columns: 25vw 25vw 25vw;
+    gap: 20px;
+
+    margin: 0 auto;
 `;
 
 const ToolsContainer = styled.div`
@@ -22,7 +30,7 @@ const ToolsContainer = styled.div`
     justify-content: center;
     flex: 1 1 3;
 
-    margin: 20px;
+    /* margin: 20px; */
 
     background-color: ${(props) => (props.color ? props.color : '#c9e1ff')};
     border-radius: ${(props) => (props.radius ? props.radius : '16px')};
@@ -52,6 +60,8 @@ const ToolsContainer = styled.div`
     @media (min-width: 1000px) {
         width: ${(props) => (props.width ? props.width : '15vw')};
         height: ${(props) => (props.width ? props.width : '15vw')};
+
+        margin: 20px;
     }
 `;
 
@@ -114,10 +124,53 @@ const ToolNameDescription = styled.h3`
     }
 `;
 
+const BackArrow = styled(BsFillArrowLeftCircleFill)`
+    color: #4baae1;
+    font-size: 2rem;
+
+    margin: 10px;
+
+    cursor: pointer;
+
+    &:disabled {
+        background-color: gray;
+    }
+`;
+
+const NextArrow = styled(BsArrowRightCircleFill)`
+    color: #4baae1;
+    font-size: 2rem;
+
+    margin: 10px;
+
+    cursor: pointer;
+
+    &:disabled {
+        background-color: gray;
+    }
+`;
+
+const Pagination = styled(ReactPaginate)`
+    all: unset;
+    width: 60vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    li {
+        all: unset;
+        cursor: pointer;
+    }
+`;
+
 export {
     ToolsContent,
     ToolsContainer,
     ToolIcon,
     ToolName,
     ToolNameDescription,
+    BackArrow,
+    NextArrow,
+    Pagination,
 };
