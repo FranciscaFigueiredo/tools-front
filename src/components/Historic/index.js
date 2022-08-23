@@ -1,31 +1,35 @@
 import { useContext } from 'react';
+import ToolContext from '../../contexts/ToolContext';
 import ToolsHistoricContext from '../../contexts/ToolsHistoricContext';
-import Box from '../ToolsCard/Box';
-import { ToolIcon, ToolsContainer, ToolsContent } from '../ToolsCard/style';
+import { ToolContent, ToolDetailContainer, ToolDetailIcon } from '../Details/style';
 import { HistoricContent, Title } from './style';
 
 export default function Historic() {
     const { historicInfo } = useContext(ToolsHistoricContext);
+    const { handleChange } = useContext(ToolContext);
 
     return (
         <HistoricContent>
             <Title>Últimas ferramentas visualizadas</Title>
-            <ToolsContent>
+            <ToolContent>
                 {
                     historicInfo ?
                         historicInfo.map((info, index) => (
-                            <Box
-                            key={ index }
-                            appId={ info?.app_id }
-                            name={ info?.name }
-                            color={ info?.color }
-                            icon={ info?.icon }
-                            link={ info?.link }
-                        />
+                            <ToolDetailContainer key={ index } type='viewed' color={ info?.color } onClick={() => {
+                                handleChange({
+                                    appId: info?.appId,
+                                    name: info?.name,
+                                    color: info?.color,
+                                    icon: info?.icon,
+                                    link: info?.link,
+                                });
+                            }}>
+                                <ToolDetailIcon type='viewed' src={ info?.icon } />
+                            </ToolDetailContainer>
                         ))
                         : 'Sem dados no histórico de visualizações'
                 }
-            </ToolsContent>
+            </ToolContent>
         </HistoricContent>
     );
 }

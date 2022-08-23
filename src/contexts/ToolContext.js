@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 const ToolContext = createContext();
 export default ToolContext;
@@ -11,6 +11,9 @@ export function ToolProvider({ children }) {
         icon: null,
         link: null,
     });
+
+    useEffect(() => {}, [toolInfo]);
+    console.log(toolInfo);
     function handleChange(tool) {
         setToolInfo({ ...tool });
     }

@@ -1,6 +1,9 @@
+import { useContext } from 'react';
+import SearchContext from '../../contexts/SearchContext';
 import { SearchContainer, SearchIcon, SearchInput } from './style';
 
-export default function Search({ search, setSearch }) {
+export default function Search() {
+    const { searchInfo, handleChange } = useContext(SearchContext)
     return (
         <SearchContainer>
             <SearchIcon />
@@ -8,8 +11,8 @@ export default function Search({ search, setSearch }) {
                 type="text"
                 placeholder="Buscar ferramenta"
                 required
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
+                value={searchInfo}
+                onChange={(event) => handleChange(event.target.value)}
             />
         </SearchContainer>
     );

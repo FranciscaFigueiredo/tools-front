@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { SearchProvider } from './contexts/SearchContext';
 import { ToolProvider } from './contexts/ToolContext';
 import { ToolsHistoricProvider } from './contexts/ToolsHistoricContext';
 
@@ -9,7 +10,9 @@ root.render(
     <React.StrictMode>
         <ToolProvider>
             <ToolsHistoricProvider>
-                <App />
+                <SearchProvider>
+                    <App />
+                </SearchProvider>
             </ToolsHistoricProvider>
         </ToolProvider>
     </React.StrictMode>

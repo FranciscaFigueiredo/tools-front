@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const DetailContent = styled.div`
-    max-width: 85vw;
+    max-width: 80vw;
     min-height: 50vh;
 
     display: flex;
@@ -18,7 +18,7 @@ const DetailContent = styled.div`
     box-sizing: content-box;
 
     position: fixed;
-    top: calc(50vh - 50%);
+    top: calc(50vh - 25%);
     left: 3vw;
 
     z-index: 100000;
@@ -33,12 +33,16 @@ const DetailContent = styled.div`
 
     @media (min-width: 1000px) {
         width: 50vw;
+        min-height: 20vh;
+
+        top: calc(30vh - 15%);
+        left: calc(42.5vw - 20%);
     }
 `;
 
 const ToolContent = styled.div`
     width: 100%;
-    min-height: 50%;
+    min-height: 20%;
 
     display: flex;
     align-items: center;
@@ -47,6 +51,7 @@ const ToolContent = styled.div`
 
 const ToolDetail = styled.div`
     width: 50%;
+    min-height: 20vw;
     max-height: 45vw;
 
     display: flex;
@@ -55,11 +60,13 @@ const ToolDetail = styled.div`
     justify-content: space-between;
 
     @media (min-width: 600px) {
-        height: 20vw;
+        min-height: 15vw;
+        max-height: 20vw;
     }
 
     @media (min-width: 1000px) {
-        height: 15vw;
+        min-height: 10vw;
+        max-height: 15vw;
     }
 `;
 
@@ -80,6 +87,12 @@ const ToolAccessButton = styled.button`
 
     &:disabled {
         background-color: gray;
+    }
+
+    @media (max-width: 400px) {
+        width: 25vw;
+
+        font-size: 1rem;
     }
 
     @media (min-width: 600px) {
@@ -105,10 +118,66 @@ const LastViewedToolsContent = styled.div`
     margin: 10px;
 `;
 
+const ToolDetailContainer = styled.div`
+    width: 25vw ;
+    height: 25vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: ${(props) => (props.color ? props.color : 'transparent')};
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px 1px ${(props) => (props.color ? props.color : 'rgba(0, 0, 0, 0.15)')};
+
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.15);
+        transition-property: opacity 0.05;
+        transition-duration: 0.4s;
+        transition-timing-function: ease-in-out
+    }
+
+    @media (min-width: 600px) {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    @media (min-width: 1000px) {
+        width: ${(props) => (props.type === 'viewed' ? '10vw' : '15vw')};
+        height: ${(props) => (props.type === 'viewed' ? '10vw' : '15vw')};
+
+        margin: ${(props) => (props.type === 'viewed' ? '10px' : '20px')};
+    }
+`;
+
+const ToolDetailIcon = styled.img`
+    width: 20vw;
+    height: 20vw;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    @media (min-width: 600px) {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    @media (min-width: 1000px) {
+        width: ${(props) => (props.type === 'viewed' ? '5vw' : '10vw')};;
+        height: ${(props) => (props.type === 'viewed' ? '5vw' : '10vw')};;
+    }
+`;
+
 export {
     DetailContent,
     ToolContent,
     ToolDetail,
     ToolAccessButton,
     LastViewedToolsContent,
+    ToolDetailContainer,
+    ToolDetailIcon,
 };
