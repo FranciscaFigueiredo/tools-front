@@ -26,6 +26,10 @@ const ContentContainer = styled.main`
     margin: 16rem auto;
 
     position: relative;
+
+    @media (min-width: 1000px) {
+        margin: 12rem auto;
+    }
 `;
 
 

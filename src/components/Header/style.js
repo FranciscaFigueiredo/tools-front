@@ -31,8 +31,6 @@ const HeaderContent = styled.div`
 
     text-align: center;
 
-    
-
     margin: 0 auto;
 
     @media (min-width: 1000px) {
@@ -66,14 +64,6 @@ const Title = styled.h1`
     font-family: 'Poppins', sans-serif;
 
     text-align: center;
-    text-align: center;
-    
-    &:hover {
-        font-size: 4rem;
-        transition-property: font-size left top;
-        transition-duration: 0.4s;
-        transition-timing-function: ease-in-out
-    }
 
     cursor: pointer;
 `;

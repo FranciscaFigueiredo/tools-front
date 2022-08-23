@@ -20,13 +20,14 @@ const ToolsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 1 1 3;
 
     margin: 20px;
 
     background-color: ${(props) => (props.color ? props.color : '#c9e1ff')};
-    border-radius: 10px;
+    border-radius: 16px;
 
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 10px 1px ${(props) => (props.color ? props.color : 'rgba(0, 0, 0, 0.15)')};
 
     position: relative;
 
@@ -34,6 +35,13 @@ const ToolsContainer = styled.div`
 
     h3 {
         filter: invert(80%)
+    }
+
+    &:hover {
+        box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.15);
+        transition-property: opacity 0.05;
+        transition-duration: 0.4s;
+        transition-timing-function: ease-in-out
     }
 
     @media (min-width: 600px) {
