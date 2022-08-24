@@ -1,5 +1,4 @@
-import { useContext, useEffect } from 'react';
-import { useState } from 'react';
+import { useContext } from 'react';
 
 import ToolContext from '../../contexts/ToolContext';
 
@@ -10,17 +9,13 @@ import ToolsCard from '../../components/ToolsCard';
 import { ContentContainer, PageContainer } from '../../styles/ContainerStyle';
 
 export default function Home() {
-    const [search, setSearch] = useState('');
-
     const { toolInfo } = useContext(ToolContext);
-
-    useEffect(() => {}, [search]);
 
     return (
         <PageContainer>
-            <Header search={ search } setSearch={ setSearch } />
+            <Header  />
             <ContentContainer>
-                <ToolsCard search={ search } setSearch={ setSearch } />
+                <ToolsCard  />
             </ContentContainer>
             {
                 toolInfo?.name ?

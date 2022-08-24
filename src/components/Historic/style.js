@@ -17,6 +17,8 @@ const Title = styled.h4`
     width: 90%;
     font-size: 1rem;
     text-align: start;
+
+    margin: 20px 0;
 `;
 
 export {

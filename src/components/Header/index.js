@@ -1,7 +1,7 @@
 import Search from '../Search';
 import { HeaderContainer, HeaderContent, Logo, LogoIcon, Title } from './style';
 
-export default function Header({ search, setSearch }) {
+export default function Header() {
     return (
         <HeaderContainer>
             <HeaderContent>
@@ -9,7 +9,7 @@ export default function Header({ search, setSearch }) {
                     <LogoIcon />
                     <Title>Tools</Title>
                 </Logo>
-                <Search search={ search } setSearch={ setSearch } />
+                <Search />
             </HeaderContent>
         </HeaderContainer>
     );

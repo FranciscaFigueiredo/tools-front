@@ -1,14 +1,14 @@
-import { ToolIcon, ToolNameDescription, ToolsContainer } from '../ToolsCard/style';
+import { ToolNameDescription } from '../ToolsCard/style';
 import Historic from '../Historic';
-import { DetailContent, ToolAccessButton, ToolDetail, ToolContent } from './style';
+import { DetailContent, ToolAccessButton, ToolDetail, ToolContent, ToolDetailContainer, ToolDetailIcon } from './style';
 
 export default function Content({ name, color, icon, link }) {
     return (
         <DetailContent>
             <ToolContent type='modal'>
-                <ToolsContainer radius='50%' width='15vw' color={ color }>
-                    <ToolIcon width='10vw' src={ icon } />
-                </ToolsContainer>
+                <ToolDetailContainer color={ color }>
+                    <ToolDetailIcon src={ icon } />
+                </ToolDetailContainer>
                 <ToolDetail>
                     <ToolNameDescription>{ name }</ToolNameDescription>
                     <ToolAccessButton onClick={ ()=> window.open(link, '_blank') } disabled={ !link }>

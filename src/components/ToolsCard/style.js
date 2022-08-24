@@ -11,28 +11,29 @@ const ToolsContent = styled.div`
     align-items: center;
     justify-content: center;
     justify-items: center;
-    grid-template-columns: 25vw 25vw 25vw;
+    grid-template-columns: 35vw 35vw;
     gap: 20px;
 
     margin: 0 auto;
+
+    @media (min-width: 600px) {
+        grid-template-columns: 25vw 25vw 25vw;
+    }
 `;
 
 const ToolsContainer = styled.div`
     width: 35vw ;
     height: 35vw;
 
-    color: ${(props) => (props.color ? props.color : '#ffffff')};
+    color: ${(props) => (props.color ? props.color : '#333333')};
     text-align: center;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1 1 3;
 
-    /* margin: 20px; */
-
-    background-color: ${(props) => (props.color ? props.color : '#c9e1ff')};
+    background-color: ${(props) => (props.color ? props.color : 'transparent')};
     border-radius: ${(props) => (props.radius ? props.radius : '16px')};
 
     box-shadow: 0 0 10px 1px ${(props) => (props.color ? props.color : 'rgba(0, 0, 0, 0.15)')};
@@ -66,8 +67,8 @@ const ToolsContainer = styled.div`
 `;
 
 const ToolIcon = styled.img`
-    width: 25vw;
-    height: 25vw;
+    max-width: 25vw;
+    max-height: 25vw;
 
     border-radius: 50%;
 
@@ -85,9 +86,9 @@ const ToolIcon = styled.img`
 `;
 
 const ToolName = styled.h3`
-    max-width: 40vw;
+    max-width: 30vw;
 
-    font-size: 1rem;
+    font-size: 0.8rem;
 
     overflow: hidden;
 
@@ -152,15 +153,21 @@ const NextArrow = styled(BsArrowRightCircleFill)`
 
 const Pagination = styled(ReactPaginate)`
     all: unset;
-    width: 60vw;
+    max-width: 60vw;
+
+    align-self: flex-end;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
 
+    margin: 20px 15vw 0 auto;
+
     li {
         all: unset;
         cursor: pointer;
+
+        margin: 10px;
     }
 `;
 
