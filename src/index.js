@@ -4,6 +4,7 @@ import App from './App';
 import { SearchProvider } from './contexts/SearchContext';
 import { ToolProvider } from './contexts/ToolContext';
 import { ToolsHistoricProvider } from './contexts/ToolsHistoricContext';
+import { ToolListProvider } from './contexts/ToolsListContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,7 +12,9 @@ root.render(
         <ToolProvider>
             <ToolsHistoricProvider>
                 <SearchProvider>
-                    <App />
+                    <ToolListProvider>
+                        <App />
+                    </ToolListProvider>
                 </SearchProvider>
             </ToolsHistoricProvider>
         </ToolProvider>

@@ -4,6 +4,12 @@ import { SearchContainer, SearchIcon, SearchInput } from './style';
 
 export default function Search() {
     const { searchInfo, handleChange } = useContext(SearchContext)
+
+    function setSearchText(event) {
+        event.preventDefault();
+        handleChange(event.target.value)
+    }
+
     return (
         <SearchContainer>
             <SearchIcon />
@@ -12,7 +18,7 @@ export default function Search() {
                 placeholder="Buscar ferramenta"
                 required
                 value={searchInfo}
-                onChange={(event) => handleChange(event.target.value)}
+                onChange={ setSearchText }
             />
         </SearchContainer>
     );
